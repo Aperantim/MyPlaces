@@ -33,11 +33,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         places = realm.objects(Place.self)
         
         //Setup the search controller
-        searchController.searchResultsUpdater = self //говорим, что получателем информации об изменении текста в данной строке должен быть наш класс
-        searchController.obscuresBackgroundDuringPresentation = false //чтобы можно было взаимодействовать с отображаемым контентом
-        searchController.searchBar.placeholder = "Search" //название для плейсхолдера
-        navigationItem.searchController = searchController //строка поиска будет интегрирована в навигатион бар
-        definesPresentationContext = true //отпускаем строку поиска при переходе на другой экран
+        
+        //our class is the receiver of information about text changing at that string
+        searchController.searchResultsUpdater = self
+        //now we can do anything with the viewing content
+        searchController.obscuresBackgroundDuringPresentation = false
+        //name for placeholder
+        searchController.searchBar.placeholder = "Search"
+        //search string will implement into navigation bar
+        navigationItem.searchController = searchController
+        //if we going to another screen, search string will disappear
+        definesPresentationContext = true
 
     }
     
@@ -66,6 +72,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.nameLabel.text = place.name
         cell.locationLabel.text = place.location
         cell.typeLabel.text = place.type
+        cell.mainScreenRatingControl.rating = Int(place.rating)
         cell.imageOfPlace.image = UIImage(data: place.imageData!)
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace.clipsToBounds = true
@@ -75,6 +82,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // MARK: - Table view delegate
     
+    //deselecting row, if we go back from newplaceVC
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    //deleting the row from mainVC and realm database
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let place = places[indexPath.row]
         let contextItem = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
@@ -92,12 +105,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let place: Place
-            if isFiltering {
-                place = filteredPlaces[indexPath.row]
-            } else {
-                place = places[indexPath.row]
-            }
+            let place = isFiltering ? filteredPlaces[indexPath.row] : places[indexPath.row]
             let newPlaceVC = segue.destination as! NewPlaceViewController
             newPlaceVC.currentPlace = place
         }

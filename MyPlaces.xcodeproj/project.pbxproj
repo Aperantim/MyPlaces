@@ -12,6 +12,7 @@
 		2C6141A523EDF5FF0050956B /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6141A423EDF5FF0050956B /* NewPlaceViewController.swift */; };
 		2C6141A723F048370050956B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6141A623F048370050956B /* StorageManager.swift */; };
 		2C7A2DF123F1BBE400F8D067 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A2DF023F1BBE400F8D067 /* RatingControl.swift */; };
+		2C7A2DF723F31A4D00F8D067 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A2DF623F31A4D00F8D067 /* MapViewController.swift */; };
 		2CB21C6E23EC7E45005ED0C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB21C6D23EC7E45005ED0C4 /* AppDelegate.swift */; };
 		2CB21C7023EC7E45005ED0C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB21C6F23EC7E45005ED0C4 /* SceneDelegate.swift */; };
 		2CB21C7523EC7E45005ED0C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB21C7323EC7E45005ED0C4 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		2C6141A423EDF5FF0050956B /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		2C6141A623F048370050956B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		2C7A2DF023F1BBE400F8D067 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = SOURCE_ROOT; };
+		2C7A2DF623F31A4D00F8D067 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Pods/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		2CB21C6A23EC7E45005ED0C4 /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB21C6D23EC7E45005ED0C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CB21C6F23EC7E45005ED0C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,14 +75,15 @@
 		2CB21C6C23EC7E45005ED0C4 /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				2C7A2DF023F1BBE400F8D067 /* RatingControl.swift */,
 				2CB21C6D23EC7E45005ED0C4 /* AppDelegate.swift */,
 				2CB21C6F23EC7E45005ED0C4 /* SceneDelegate.swift */,
-				2CB21C8123EC838D005ED0C4 /* MainViewController.swift */,
-				2C6141A423EDF5FF0050956B /* NewPlaceViewController.swift */,
-				2C6141A023EDBCAA0050956B /* CustomTableViewCell.swift */,
 				2C6141A223EDC3A70050956B /* PlaceModel.swift */,
 				2C6141A623F048370050956B /* StorageManager.swift */,
+				2CB21C8123EC838D005ED0C4 /* MainViewController.swift */,
+				2C6141A423EDF5FF0050956B /* NewPlaceViewController.swift */,
+				2C7A2DF623F31A4D00F8D067 /* MapViewController.swift */,
+				2C6141A023EDBCAA0050956B /* CustomTableViewCell.swift */,
+				2C7A2DF023F1BBE400F8D067 /* RatingControl.swift */,
 				2CB21C7323EC7E45005ED0C4 /* Main.storyboard */,
 				2CB21C7623EC7E46005ED0C4 /* Assets.xcassets */,
 				2CB21C7823EC7E46005ED0C4 /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 				2C6141A523EDF5FF0050956B /* NewPlaceViewController.swift in Sources */,
 				2CB21C6E23EC7E45005ED0C4 /* AppDelegate.swift in Sources */,
 				2C6141A723F048370050956B /* StorageManager.swift in Sources */,
+				2C7A2DF723F31A4D00F8D067 /* MapViewController.swift in Sources */,
 				2C7A2DF123F1BBE400F8D067 /* RatingControl.swift in Sources */,
 				2C6141A323EDC3A70050956B /* PlaceModel.swift in Sources */,
 				2C6141A123EDBCAA0050956B /* CustomTableViewCell.swift in Sources */,
