@@ -121,7 +121,7 @@
                                                     </constraints>
                                                     <state key="normal" image="Placeholder"/>
                                                     <connections>
-                                                        <segue destination="UPx-gq-Wgk" kind="presentation" identifier="getAdress" id="GsR-Nh-ZTR"/>
+                                                        <segue destination="UPx-gq-Wgk" kind="presentation" identifier="getAddress" id="GsR-Nh-ZTR"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -240,7 +240,7 @@
                                 </constraints>
                                 <state key="normal" image="camcel"/>
                                 <connections>
-                                    <action selector="closeVC" destination="UPx-gq-Wgk" eventType="touchUpInside" id="wDD-XR-d9y"/>
+                                    <action selector="closeVC" destination="UPx-gq-Wgk" eventType="touchUpInside" id="wup-st-cKP"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="Tlt-O2-5ab">
@@ -263,7 +263,18 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="doneButtonPressed" destination="UPx-gq-Wgk" eventType="touchUpInside" id="rhF-W3-vIQ"/>
+                                    <action selector="doneButtonPressed" destination="UPx-gq-Wgk" eventType="touchUpInside" id="zLz-Gj-dP1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCV-2j-yWd">
+                                <rect key="frame" x="182" y="718" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="LxK-9d-ddu"/>
+                                    <constraint firstAttribute="height" constant="50" id="pxW-ip-Efr"/>
+                                </constraints>
+                                <state key="normal" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="UPx-gq-Wgk" eventType="touchUpInside" id="gXj-Dg-ops"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4N-dF-CrF">
@@ -274,7 +285,7 @@
                                 </constraints>
                                 <state key="normal" image="location"/>
                                 <connections>
-                                    <action selector="centerViewOnUserLocation" destination="UPx-gq-Wgk" eventType="touchUpInside" id="eSV-QF-M34"/>
+                                    <action selector="centerViewInUserLocation" destination="UPx-gq-Wgk" eventType="touchUpInside" id="ReD-w2-mIR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -283,6 +294,7 @@
                             <constraint firstItem="pts-B7-PUB" firstAttribute="trailing" secondItem="f4N-dF-CrF" secondAttribute="trailing" constant="40" id="073-Za-6Zc"/>
                             <constraint firstItem="vCG-hK-PXk" firstAttribute="trailing" secondItem="pts-B7-PUB" secondAttribute="trailing" id="0fa-IE-4mM"/>
                             <constraint firstItem="pts-B7-PUB" firstAttribute="bottom" secondItem="f4N-dF-CrF" secondAttribute="bottom" constant="168" id="1Dk-EH-qlU"/>
+                            <constraint firstItem="cCV-2j-yWd" firstAttribute="centerX" secondItem="OyD-WA-Qhu" secondAttribute="centerX" id="1Oj-bm-gqj"/>
                             <constraint firstItem="VXK-Pa-AYt" firstAttribute="top" secondItem="pts-B7-PUB" secondAttribute="top" constant="40" id="A8h-st-XX4"/>
                             <constraint firstItem="pts-B7-PUB" firstAttribute="trailing" secondItem="VXK-Pa-AYt" secondAttribute="trailing" constant="40" id="DPq-jf-iKW"/>
                             <constraint firstAttribute="bottom" secondItem="Odf-5v-Xx7" secondAttribute="bottom" id="EAC-3e-MVh"/>
@@ -295,15 +307,16 @@
                             <constraint firstItem="Odf-5v-Xx7" firstAttribute="trailing" secondItem="pts-B7-PUB" secondAttribute="trailing" id="pa2-50-5pw"/>
                             <constraint firstItem="pts-B7-PUB" firstAttribute="bottom" secondItem="bWc-hh-Ms0" secondAttribute="bottom" constant="40" id="sqp-GI-UMc"/>
                             <constraint firstItem="Tlt-O2-5ab" firstAttribute="centerX" secondItem="OyD-WA-Qhu" secondAttribute="centerX" id="tPk-Rh-pdr"/>
+                            <constraint firstItem="pts-B7-PUB" firstAttribute="bottom" secondItem="cCV-2j-yWd" secondAttribute="bottom" constant="40" id="xao-5u-uDw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pts-B7-PUB"/>
                     </view>
                     <connections>
-                        <outlet property="addressLabel" destination="vCG-hK-PXk" id="hEw-gu-MIh"/>
-                        <outlet property="centerViewOnUserLocationButton" destination="f4N-dF-CrF" id="uFg-sT-UiD"/>
-                        <outlet property="doneButton" destination="bWc-hh-Ms0" id="HrD-2o-IgB"/>
-                        <outlet property="mapPinImage" destination="Tlt-O2-5ab" id="bYg-ZK-4fQ"/>
-                        <outlet property="mapView" destination="Odf-5v-Xx7" id="rTb-Jj-oN9"/>
+                        <outlet property="addressLabel" destination="vCG-hK-PXk" id="jpx-51-YGB"/>
+                        <outlet property="doneButton" destination="bWc-hh-Ms0" id="DaJ-6e-7Df"/>
+                        <outlet property="goButton" destination="cCV-2j-yWd" id="gWO-LO-fCy"/>
+                        <outlet property="mapPinImage" destination="Tlt-O2-5ab" id="sFe-Rz-dbE"/>
+                        <outlet property="mapView" destination="Odf-5v-Xx7" id="qeL-v5-2Q6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCY-lF-iLM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -485,6 +498,7 @@
     </scenes>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Photo" width="195" height="196"/>
         <image name="Pin" width="42" height="42"/>
         <image name="Placeholder" width="22" height="22"/>
